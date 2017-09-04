@@ -10,6 +10,7 @@ cmsenv
 voms-proxy-init -voms cms
 
 wget https://raw.githubusercontent.com/hyunyong/CMSPOS/master/GRID.py
+wget https://raw.githubusercontent.com/hyunyong/CMSPOS/master/rootFileListPU200.txt
 
 python GRID.py
 ```
