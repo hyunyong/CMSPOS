@@ -1,7 +1,4 @@
 import ROOT, os, sys
-ROOT.gSystem.Load("libFWCoreFWLite.so");
-ROOT.gSystem.Load("libDataFormatsFWLite.so");
-ROOT.AutoLibraryLoader.enable()
 from DataFormats.FWLite import Events, Handle
 
 ROOT.gROOT.SetBatch(1)
@@ -10,7 +7,7 @@ inF = open(sys.argv[1], 'r')
 fileList = [x for x in inF ]
 xrootSite = "root://cms-xrd-global.cern.ch/" 
 
-out_root = ROOT.TFile("CMSPOS.root","RECREATE")
+outROOT = ROOT.TFile("CMSPOS.root","RECREATE")
 
 GE11RecHit = ROOT.TH2D("chamberRecHits", "recHits", 500, -25, 25,8,1,9)
 GE11ClusterSize = ROOT.TH1D("clusterSize", "cluster Size", 25, 0, 25)
@@ -30,6 +27,6 @@ for f in fileList:
         if rh.gemId().station() == 1:
           GE11RecHit.Fill(rh.localPosition().x(), rh.gemId().roll())
           GE11ClusterSize.Fill(rh.clusterSize())
-out_root.Write()
-out_root.Close()
+outROOT.Write()
+outROOT.Close()
 
