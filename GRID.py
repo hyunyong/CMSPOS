@@ -22,6 +22,9 @@ for f in fileList[:5]:
   print xrootSite+f
   events = Events(xrootSite+f)
   for e in events:
+    e.getByLabel(gemRecHitsLabel,gemRecHits) 
+    e.getByLabel(simLabel, sim)
+    e.getByLabel(muonsLable, muons)
     if gemRecHits.isValid():
       for rh in gemRecHits.product():
         #print rh.gemId().region(), rh.gemId().station(), rh.gemId().layer(), rh.gemId().chamber(), rh.localPosition().x(), rh.gemId().roll()
