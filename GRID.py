@@ -18,7 +18,7 @@ gemRecHitsLabel, gemRecHits = "gemRecHits", Handle("edm::RangeMap<GEMDetId,edm::
 simLabel, sim = ("g4SimHits", "MuonGEMHits", "SIM"), Handle("vector<PSimHit>")
 muonsLable, muons = "muons", Handle("vector<reco::Muon>")
 
-for f in fileList:
+for f in fileList[:5]:
   print xrootSite+f
   events = Events(xrootSite+f)
   for e in events:
