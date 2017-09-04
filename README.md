@@ -7,6 +7,10 @@ scram p cmssw CMSSW_9_1_1_patch1
 cd CMSSW_9_1_1_patch1/src
 cmsenv
 
+wget https://raw.githubusercontent.com/hyunyong/CMSPOS/master/CMSPOS.py
+
+python CMSPOS.py
+
 voms-proxy-init -voms cms
 
 wget https://raw.githubusercontent.com/hyunyong/CMSPOS/master/GRID.py
