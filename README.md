@@ -19,3 +19,5 @@ wget https://raw.githubusercontent.com/hyunyong/CMSPOS/master/rootFileListPU200.
 python GRID.py
 ```
 
+https://indico.cern.ch/event/615859/timetable/
+https://indico.cern.ch/event/615859/contributions/2485296/attachments/1517811/2369590/GEMDPG_CMSPOS.pdf
